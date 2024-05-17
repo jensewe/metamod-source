@@ -68,7 +68,7 @@ fi
 
 # Check out a local copy as a proxy.
 if [ ! -d "hl2sdk-proxy-repo" ]; then
-  git clone --mirror https://github.com/alliedmodders/hl2sdk hl2sdk-proxy-repo
+  git clone --mirror https://github.com/jensewe/hl2sdk hl2sdk-proxy-repo
 else
   cd hl2sdk-proxy-repo
   git fetch
@@ -78,7 +78,7 @@ fi
 for sdk in "${sdks[@]}"
 do
   repo=hl2sdk-proxy-repo
-  origin="https://github.com/alliedmodders/hl2sdk"
+  origin="https://github.com/jensewe/hl2sdk"
   name=hl2sdk-$sdk
   branch=$sdk
   checkout
