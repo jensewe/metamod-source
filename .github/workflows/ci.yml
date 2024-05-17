@@ -100,6 +100,12 @@ jobs:
           cd build
           python ../configure.py --enable-optimize --sdks=${{ join(fromJSON(env.SDKS)) }} --hl2sdk-root=${{ env.DEPENDENCIES_ROOT }}
           ambuild
+      
+      - name: Uploading package
+        uses: actions/upload-artifact@v2
+        with:
+          name: metamod-source-${{ matrix.os_short }}-${{ matrix.compiler_cc }}
+          path: metamod-source/build/package
 
       - name: Test SourceHook (Optimized)
         working-directory: metamod-source
